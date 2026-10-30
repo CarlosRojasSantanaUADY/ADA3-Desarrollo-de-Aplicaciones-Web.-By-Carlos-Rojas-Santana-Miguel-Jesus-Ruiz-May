@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA 3 - Validacion de Formulario</title> 
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">MiSitioWeb</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="formulario.html">Registro / Formulario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white text-center py-3">
+                        <h2 class="h4 mb-0">Formulario de Registro Integrado</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        
+                        <div id="mensaje-global" class="alert alert-danger d-none" role="alert"></div>
+
+                        <form id="formulario-registro" novalidate>
+                            
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label fw-bold">Nombre Completo *</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej. Juan Perez">
+                                <div id="error-nombre" class="text-danger small mt-1 fw-semibold"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Correo Electronico *</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="juan@correo.com">
+                                <div id="error-email" class="text-danger small mt-1 fw-semibold"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="perfil" class="form-label fw-bold">Perfil de Acceso *</label>
+                                <select class="form-select" id="perfil" name="perfil">
+                                    <option value="">-- Seleccione una opcion --</option>
+                                    <option value="estudiante">Estudiante</option>
+                                    <option value="profesor">Profesor</option>
+                                    <option value="administrador">Administrador</option>
+                                </select>
+                                <div id="error-perfil" class="text-danger small mt-1 fw-semibold"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label d-block fw-bold">Frecuencia de Notificaciones *</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="notificaciones" id="notif-diaria" value="diaria">
+                                    <label class="form-check-input" for="notif-diaria">Diaria</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="notificaciones" id="notif-semanal" value="semanal">
+                                    <label class="form-check-input" for="notif-semanal">Semanal</label>
+                                </div>
+                                <div id="error-notificaciones" class="text-danger small mt-1 fw-semibold"></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terminos" name="terminos">
+                                    <label class="form-check-label text-muted" for="terminos">
+                                        Acepto los terminos, condiciones y politicas de privacidad *
+                                    </label>
+                                </div>
+                                <div id="error-terminos" class="text-danger small mt-1 fw-semibold"></div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar Registro</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/validacion.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA 3 - Desarrollo de Aplicaciones Web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Sitio Oficial de TecnoFix</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario.html">Registro / Formulario</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container my-5 text-center">
+        <div class="p-5 bg-white rounded-3 shadow-sm">
+            <h1 class="display-5 fw-bold text-primary">ADA 3 Desarrollo de Aplicaciones Web</h1>
+            <p class="lead text-muted">Integrantes del Equipo:</p>
+            <ul class="list-inline fs-5 text-secondary">
+                <li class="list-inline-item mx-3">Carlos Rojas Santana</li>
+                <li class="list-inline-item mx-3">Miguel Jesus Ruiz May</li>
+            </ul>
+            <div class="mt-4 alert alert-info d-inline-block shadow-sm" role="alert">
+                <strong>Fecha de consulta:</strong> <span id="fecha-actual">Cargando fecha...</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            <section class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h3 class="card-title mb-0 h5">Calculadora Interactiva (JavaScript)</h3>
+                    </div>
+                    <div class="card-body bg-dark text-white p-4 rounded-bottom">
+                        <input type="text" id="pantalla-calculadora" class="form-control form-control-lg text-end mb-3 bg-light text-dark fw-bold" readonly placeholder="0">
+                        <div class="row g-2">
+                            <div class="col-3"><button class="btn btn-danger w-100 py-3" onclick="limpiarPantalla()">C</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100 py-3" onclick="agregarAPantalla('/')">/</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100 py-3" onclick="agregarAPantalla('*')">*</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100 py-3" onclick="agregarAPantalla('-')">-</button></div>
+                            
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('7')">7</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('8')">8</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('9')">9</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100 py-3" onclick="agregarAPantalla('+')">+</button></div>
+                            
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('4')">4</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('5')">5</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('6')">6</button></div>
+                            <div class="col-3"><button class="btn btn-success w-100 py-3" onclick="calcularResultado()">=</button></div>
+                            
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('1')">1</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('2')">2</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('3')">3</button></div>
+                            <div class="col-3"><button class="btn btn-light w-100 py-3" onclick="agregarAPantalla('0')">0</button></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-dark text-white py-3">
+                        <h3 class="card-title mb-0 h5">Arquitectura y Preparacion de Datos</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted">Esta seccion describe el mapeo estructural diseñado en el FrontEnd para interactuar proximamente con la persistencia de datos.</p>
+                        <h6 class="fw-bold text-secondary">Estructura de Entidad Prevista (JSON):</h6>
+                        <pre class="bg-light p-3 rounded text-dark border font-monospace small">
+{
+  "id_usuario": "AUTO_INCREMENT",
+  "nombre_completo": "string",
+  "correo_electronico": "string",
+  "perfil_acceso": "string",
+  "suscripcion_activa": "boolean",
+  "fecha_registro": "TIMESTAMP"
+}</pre>
+                        <div class="alert alert-warning text-dark border-0 small mt-2">
+                            Nota de diseño: Los atributos name e id de todos los formularios se corresponden directamente con el esquema relacional planeado para las tablas del Backend.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p class="mb-0 small"> Elaborado por Carlos Rojas Santana y Miguel Jesus Ruiz May</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/calculadora.js"></script>
+    <script src="https://github.io"></script>
+</body>
+</html>
